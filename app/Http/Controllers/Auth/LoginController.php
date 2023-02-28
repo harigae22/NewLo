@@ -38,7 +38,7 @@ class LoginController extends Controller
         $social_user = Socialite::driver($provider)->stateless()->user();
         $social_email = $social_user->getEmail();
         $social_name = $social_user->getName();
-        $social_password =  Str::random(32);
+        $social_password =  Str::random(10);
 
 
         $user = User::where(['email' => $social_email])->first();
