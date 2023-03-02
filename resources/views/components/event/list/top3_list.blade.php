@@ -1,4 +1,3 @@
-
 @props([
     'events' => [],
     'like' => []

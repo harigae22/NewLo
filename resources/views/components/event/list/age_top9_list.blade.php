@@ -1,4 +1,3 @@
-
 @props([
     'ageEvents' => [],
     'ages' => [],

@@ -1,6 +1,6 @@
 <x-layout title="投稿フォーム | NewLo">
 
-<x-slot name="header">
+    <x-slot name="header">
         <div class="mx-auto max-w-7xl py-6 pl-6 px-4 sm:px-6 lg:px-8">
             <h1 class="text-3xl font-bold tracking-tight text-gray-800 pl-8">NewLo</h1>
             <h2 class="text-1xl font-bold tracking-tight text-gray-600 pl-8">投稿フォーム</h2>

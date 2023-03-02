@@ -18,11 +18,10 @@
             @endphp
 
             <div>
-                
+
                 <x-element.breadcrumbs :breadcrumbs="$breadcrumbs"></x-element.breadcrumbs>
 
                 <x-admin.put :event="$event" :ages="$ages" :prefectures="$prefectures" :categories="$categories"></x-admin.put>
-
 
             </div>
         </div>
