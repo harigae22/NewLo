@@ -15,7 +15,7 @@ class EventsSeeder extends Seeder
      */
     public function run()
     {
-        Event::factory()->count(5)->create()->each(fn($event) => 
+        Event::factory()->count(3)->create()->each(fn($event) => 
             Image::factory()->count(4)->create()->each(fn($image) =>
                 $event->images()->attach($image->id)
             )

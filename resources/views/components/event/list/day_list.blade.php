@@ -22,14 +22,13 @@
                         <div class="flex justify-between">
                             <div class="flex items-center">
                                 <img class="mr-2 h-8 w-8 object-cover rounded-full" src="{{ $dayEvent->user->profile_photo_url }}" alt="{{ $dayEvent->user->name }}">
-                                <span class="text-gray-500">{{$dayEvent->user->name}}</span>
+                                <span class="text-gray-500">{{ $dayEvent->user->name }}</span>
                             </div>
-                            <form action="{{route('newlo.like.main_list')}}" method="post">
-                                @csrf
-                                <input type="hidden" name="event_id" value="{{$dayEvent->id}}">
-                                <x-element.button_like :event="$dayEvent" :like="$like"></x-element.button_like>
-                            </form>
-                            <x-element.details :event='$dayEvent'></x-element.details>
+                            <div class="flex">
+                                <x-element.button_like_count :event="$dayEvent" :like="$like"></x-element.button_like_count>
+                                
+                                <x-element.details :event='$dayEvent'></x-element.details>
+                            </div>
                         </div>
                         <span class="text-gray-800 text-lg lg:text-xl font-bold transition duration-100">{{$dayEvent->title}}</span>
                         <span class="text-gray-500">{{$dayEvent->prefecture->name}} / {{$dayEvent->age->name}} / {{$dayEvent->category->name}}</span>

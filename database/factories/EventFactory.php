@@ -18,7 +18,7 @@ class EventFactory extends Factory
     {
         //ダミーeventの投稿の作成
         return [
-            'user_id' => 5,
+            'user_id' => 1,
             'day' => $this->faker->date('Y_m_d'),
             'title' => $this->faker->realText(10),
             'content' => $this->faker->realText(100),

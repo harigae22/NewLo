@@ -18,8 +18,8 @@ class LikeFactory extends Factory
     {
         //ダミーeventの投稿の作成
         return [
-            'user_id' => $this->faker->numberBetween(13,16),
-            'event_id' => 29,
+            'user_id' => $this->faker->numberBetween(3,11),
+            'event_id' => $this->faker->numberBetween(33),
         ];
     }
 }

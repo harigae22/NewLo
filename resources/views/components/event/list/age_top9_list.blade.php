@@ -65,19 +65,18 @@
                             <x-event.list_image :images="$ageEvent->images"/>
                         </a>
                     </div>
-                    
+
                     <div class="flex flex-col">
                         <div class="flex justify-between">
                             <div class="flex items-center">
                                 <img class="mr-2 h-8 w-8 object-cover rounded-full" src="{{ $ageEvent->user->profile_photo_url }}" alt="{{ $ageEvent->user->name }}">
                                 <span class="text-gray-500">{{$ageEvent->user->name}}</span>
                             </div>
-                            <form action="{{route('newlo.like.main_list')}}" method="post">
-                                @csrf
-                                <input type="hidden" name="event_id" value="{{$ageEvent->id}}">
-                                <x-element.button_like :event="$ageEvent" :like="$like"></x-element.button_like>
-                            </form>
-                            <x-element.details :event='$ageEvent'></x-element.details>
+                            <div class="flex">
+                                <x-element.button_like_count :event="$ageEvent" :like="$like"></x-element.button_like_count>
+                                
+                                <x-element.details :event='$ageEvent'></x-element.details>
+                            </div>
                         </div>
                         <span class="text-gray-800 text-lg lg:text-xl font-bold transition duration-100">{{$ageEvent->title}}</span>
                         <span class="text-gray-500">{{$ageEvent->prefecture->name}} / {{$ageEvent->age->name}} / {{$ageEvent->category->name}}</span>
