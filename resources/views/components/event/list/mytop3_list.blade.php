@@ -13,7 +13,7 @@
             @foreach ( $myevents as $myevent)
                 <div>
                     <div class="ioverflow-hidden  aspect-video cursor-ponter rounded-xl relative group">
-                        <a href="{{route('newlo.event_show', ['eventId' => $myevent->id])}}" class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out h-60 group h-50 block bg-gray-100 rounded-lg overflow-hidden shadow-lg mb-2 lg:mb-3">
+                        <a href="{{route('newlo.show', ['eventId' => $myevent->id])}}" class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out h-60 group h-50 block bg-gray-100 rounded-lg overflow-hidden shadow-lg mb-2 lg:mb-3">
                             <x-event.list_image :images="$myevent->images"/>
                         </a>
                     </div>

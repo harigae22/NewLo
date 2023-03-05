@@ -13,55 +13,58 @@ class EventService
 {
     public function getEvents()
     {
-        //with で画像を同時にIndexControllerへ渡す
         return Event::withCount('likes')->with('images')->where('del_flg', '0')->orderBy('created_at', 'DESC')->get();
     }
 
+
     public function myEvents()
     {
-        //with で画像を同時にIndexControllerへ渡す
         return Event::withCount('likes')->with('images')->where('del_flg', '0')->orderBy('created_at', 'DESC');
     }
+
 
     public function AgeEvents()
     {
         return Event::withCount('likes')->where('del_flg', '0')->orderBy('likes_count', 'desc')->orderBy('created_at', 'DESC');
     }
 
+
     public function MainAgeTop9Events()
     {
-        //投稿イベント いいね数TOP3
         return Event::withCount('likes')->where('del_flg', '0')->orderBy('likes_count', 'desc')->orderBy('created_at', 'DESC');
     }
 
+
     public function Top1Event()
     {
-        //投稿イベント いいね数TOP3
-        return Event::withCount('likes')->with('images')->where('del_flg', '0')->orderBy('likes_count', 'desc');
+        return Event::withCount('likes')->with('images')->where('del_flg', '0')->orderBy('likes_count', 'desc')->orderBy('created_at', 'DESC');
     }
+
 
     public function Top3Events()
     {
-        //投稿イベント いいね数TOP3
         return Event::withCount('likes')->with('images')->where('del_flg', '0')->orderBy('likes_count', 'desc')->orderBy('created_at', 'DESC');
     }
+
 
     public function MyTop3Events()
     {   
         $userId = Auth::user()->id;
-        //with で画像を同時にIndexControllerへ渡す
         return Event::withCount('likes')->with('images')->where('del_flg', '0')->where('user_id',$userId)->orderBy('likes_count', 'desc')->orderBy('created_at', 'DESC');
     }
 
+
     public function DayTop3Events()
     {
-        return Event::withCount('likes')->with('images')->where('del_flg', '0')->orderBy('day', 'DESC')->orderBy('created_at', 'DESC');
+        return Event::withCount('likes')->with('images')->where('del_flg', '0')->orderBy('created_at', 'DESC');
     }
+
 
     public function likeEvents()
     {
         return \Auth::user()->likeEvents()->withCount('likes')->where('del_flg', '0')->orderBy('created_at', 'DESC');
     }
+
 
     //ユーザーの投稿内容かどうかのチェック
     //Controllerコード重複回避のためServiceへ記入

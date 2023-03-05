@@ -54,14 +54,16 @@
                     @endif
                 @endforeach
             @endif
-            Top9</h2>
+            Top9
+        </h2>
+        
         <p class="text-gray-500 md:text-lg">NewLo 世代別 ランキング</p>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-4 md:gap-x-6 gap-y-6">
             @foreach ( $ageEvents as $ageEvent)
                 <div>
                     <div class="ioverflow-hidden  aspect-video cursor-ponter rounded-xl relative group">
-                        <a href="{{route('newlo.event_show',['eventId' => $ageEvent->id])}}" class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out h-60 group h-50 block bg-gray-100 rounded-lg overflow-hidden shadow-lg mb-2 lg:mb-3">
+                        <a href="{{route('newlo.show',['eventId' => $ageEvent->id])}}" class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out h-60 group h-50 block bg-gray-100 rounded-lg overflow-hidden shadow-lg mb-2 lg:mb-3">
                             <x-event.list_image :images="$ageEvent->images"/>
                         </a>
                     </div>

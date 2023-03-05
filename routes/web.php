@@ -50,13 +50,18 @@ Route::group(['middleware' => ['auth', 'can:user-higher']], function () {
         Route::get('/', \App\Http\Controllers\Event\IndexController::class)
         ->name('newlo.main');
 
-            // Main
-            Route::post('/like/main_list', '\App\Http\Controllers\Event\LikeController@like_MainList')
-            ->name('newlo.like.main_list');
 
-            // 検索機能
+            // Main
+            Route::get('/list/show/{eventId}', \App\Http\Controllers\Event\MainShowController::class)
+            ->name('newlo.show');
+
+            Route::post('/like/show_like', '\App\Http\Controllers\Event\LikeController@main_show_like')
+            ->name('newlo.main_show.like');
+
+            // メインページ検索機能
             Route::get('/main/serach', \App\Http\Controllers\Event\MainListSearchController::class)
             ->name('newlo.main_search');
+
 
 
             // Event
@@ -66,11 +71,13 @@ Route::group(['middleware' => ['auth', 'can:user-higher']], function () {
             Route::get('/event/list/show/{eventId}', \App\Http\Controllers\Event\EventShowController::class)
                 ->name('newlo.event_show');
 
-            Route::post('/like/show_like', '\App\Http\Controllers\Event\LikeController@show_like')
+            Route::post('/like/show_like/event', '\App\Http\Controllers\Event\LikeController@event_show_like')
                 ->name('newlo.event_show.like');
 
-            Route::post('/like/event/list/like', '\App\Http\Controllers\Event\LikeController@like_EventList')
-                ->name('newlo.event_list.like');
+            // Eventページ 検索機能
+            Route::get('/serach', \App\Http\Controllers\Event\EventListSearchController::class)
+            ->name('newlo.search');
+
 
 
             // Like
@@ -80,11 +87,9 @@ Route::group(['middleware' => ['auth', 'can:user-higher']], function () {
             Route::get('/like/list/show/{eventId}', \App\Http\Controllers\Event\LikeShowController::class)
                 ->name('newlo.like_show');
 
-            Route::post('/like.show_like', '\App\Http\Controllers\Event\LikeController@like_show_like')
+            Route::post('/like/show_like/like', '\App\Http\Controllers\Event\LikeController@like_show_like')
                 ->name('newlo.like_show.like');
 
-            Route::post('/like/like_list', '\App\Http\Controllers\Event\LikeController@like_LikeList')
-                ->name('newlo.like_list.like');
 
 
             // My List
@@ -95,9 +100,6 @@ Route::group(['middleware' => ['auth', 'can:user-higher']], function () {
                 ->name('newlo.my_show');
 
 
-            // 検索機能
-            Route::get('/serach', \App\Http\Controllers\Event\EventListSearchController::class)
-                ->name('newlo.search');
 
             // 投稿機能
             Route::get('/tweet', \App\Http\Controllers\Event\TweetController::class)

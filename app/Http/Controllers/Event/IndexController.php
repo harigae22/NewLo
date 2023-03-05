@@ -23,17 +23,19 @@ class IndexController extends Controller
     {
         $like = new Like;
 
+        // 全世代上位Top1
         $top1Event = $eventService->Top1Event()->first();
 
-        $events = $eventService->Top3Events()->limit(3)->get();
-        
-        // MyEventTop3
-        $myevents = $eventService->MyTop3Events()->limit(3)->get();
-
-        // AgeTopEventTop9
+        // 世代別上位Top9
         $ageEvents = $eventService->AgeEvents()->limit(9)->get();
 
-        // DayTop3 初期-
+        // 全世代上位Top3
+        $events = $eventService->Top3Events()->limit(3)->get();
+
+        // ユーザー投稿Top3
+        $myevents = $eventService->MyTop3Events()->limit(3)->get();
+
+        // 最新順3件
         $dayEvents = $eventService->DayTop3Events()->limit(3)->get();
 
         
