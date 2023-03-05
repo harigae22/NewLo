@@ -23,12 +23,11 @@
                                 <img class="mr-2 h-8 w-8 object-cover rounded-full" src="{{ $event->user->profile_photo_url }}" alt="{{ $event->user->name }}">
                                 <span class="text-gray-500">{{$event->user->name}}</span>
                             </div>
-                            <form action="{{route('newlo.event_list.like')}}" method="post">
-                                @csrf
-                                <input type="hidden" name="event_id" value="{{$event->id}}">
+                            <div class="flex">
                                 <x-element.button_like :event="$event" :like="$like"></x-element.button_like>
-                            </form>
-                            <x-element.admin_details :event='$event'></x-element.admin_details>
+                                
+                                <x-element.admin_details :event='$event'></x-element.admin_details>
+                            </div>
                         </div>
                         <span class="text-gray-800 text-lg lg:text-xl font-bold transition duration-100">{{$event->title}}</span>
                         <span class="text-gray-500">{{$event->prefecture->name}} / {{$event->age->name}} / {{$event->category->name}}</span>

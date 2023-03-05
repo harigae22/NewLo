@@ -12,7 +12,7 @@
             <div>
 
                 <div class="mb-10 md:mb-16 text-right">
-                    <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">{{ $user->name }}<br>イベント一覧</p>
+                    <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">{{ $user->name }} さん<br>投稿済みイベント一覧</p>
                 </div>
 
                 <x-admin.list_event :events="$events" :ages="$ages" :prefectures="$prefectures" :categories="$categories" :like="$like"></x-admin.list_event>
