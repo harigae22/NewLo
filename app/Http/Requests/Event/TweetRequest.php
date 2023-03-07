@@ -25,7 +25,7 @@ class TweetRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'content' => 'required|max:140',
+            'content' => 'required',
             'cost' => 'nullable|numeric',
             'age_id' => 'required',
             'category_id' => 'required',

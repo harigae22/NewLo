@@ -31,7 +31,7 @@
                 </form>
             </div>
             <h1 class="text-black-800 text-3xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-8 break-words">{{ $event->title }}</h1>
-            <p class="max-w text-gray-500 xl:text-lg leading-relaxed mb-20 break-words">{{ $event->content }}</p>
+            <p class="max-w text-gray-500 xl:text-lg leading-relaxed mb-20 break-words whitespace-pre-wrap">{{ $event->content }}</p>
 
             <div class="flex justify-end">
                 <p class="max-w text-gray-500 xl:text-lg leading-relaxed mb-20 break-words">
