@@ -12,7 +12,7 @@
 
             @php
                 $breadcrumbs = [
-                    ['href' => route('newlo.event_list'), 'label' => 'TOP'],
+                    ['href' => route('admin'), 'label' => 'TOP'],
                     ['href' => '#', 'label' => '編集']
                 ];
             @endphp
