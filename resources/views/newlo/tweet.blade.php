@@ -10,19 +10,16 @@
     <div class="bg-white py-6 sm:py-8 lg:py-12">
         <div class="max-w-screen-sm px-4 md:px-30 mx-auto">
             <div>
-
                 @php
                     $breadcrumbs = [
                         ['href' => route('newlo.main'), 'label' => 'TOP'],
                         ['href' => '#', 'label' => '投稿']
                     ];
                 @endphp
-
-                    <x-element.breadcrumbs :breadcrumbs="$breadcrumbs"></x-element.breadcrumbs>
-
-                    <x-event.form.post :ages="$ages" :prefectures="$prefectures" :categories="$categories"></x-event.form.post>
-
-                </div>
+                
+                <x-element.breadcrumbs :breadcrumbs="$breadcrumbs"></x-element.breadcrumbs>
+                <x-event.form.post :ages="$ages" :prefectures="$prefectures" :categories="$categories"></x-event.form.post>
+            </div>
         </div>
     </div>
 </x-layout>

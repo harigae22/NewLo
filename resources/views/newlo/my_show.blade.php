@@ -23,9 +23,7 @@
             @endphp
 
             <x-element.breadcrumbs :breadcrumbs="$breadcrumbs"></x-element.breadcrumbs>
-
             <x-event.show_like :event="$event" :ages="$ages" :prefectures="$prefectures" :categories="$categories" :like="$like"></x-event.show_like>
-
         </div>
     </div>
 </x-layout>

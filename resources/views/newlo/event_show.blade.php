@@ -23,7 +23,6 @@
             @endphp
 
             <x-element.breadcrumbs :breadcrumbs="$breadcrumbs"></x-element.breadcrumbs>
-
             <x-event.show :event="$event" :ages="$ages" :prefectures="$prefectures" :categories="$categories" :like="$like"></x-event.show>
 
         </div>
